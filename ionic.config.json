@@ -1,0 +1,7 @@
+{
+  "name": "babel-list",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

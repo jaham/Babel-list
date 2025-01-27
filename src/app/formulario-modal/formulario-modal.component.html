@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="close()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-button type="submit" [strong]="true" form="registerForm" [disabled]="registerForm.invalid">Registrarse</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="registerForm" id="registerForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input formControlName="titulo" placeholder="Titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input formControlName="descripcion" placeholder="descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select placeholder="Estatus" formControlName="estado">
+        <ion-select-option value="pendiente">Pendiente</ion-select-option>
+        <ion-select-option value="completada">Completada</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha Vencimiento</ion-label>
+      <ion-datetime formControlName="fechaVencimiento" placeholder="Fecha Vencimiento" [min]="fechaMinima"></ion-datetime>
+    </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,33 @@
+
+
+<ion-accordion-group>
+  <ion-accordion *ngFor="let tarea of tareas" [value]="tarea.uid">
+    <ion-item slot="header" color="light">
+      <ion-label>{{tarea.titulo}}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{tarea.estado}}</ion-card-title>
+          <ion-card-subtitle>{{tarea.fechaVencimiento}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{tarea.descripcion}}
+        </ion-card-content>
+      
+        <ion-button fill="clear" (click)="borrar(tarea.uid)">Borrar</ion-button>
+        <ion-button fill="clear" (click)="emitirEditar(tarea)">editar</ion-button>
+      </ion-card>
+      
+      
+      
+      <!-- <ion-label>Descripción:</ion-label>
+      <p>
+        {{tarea.descripcion}}
+      </p> -->
+    </div>
+  </ion-accordion>
+
+</ion-accordion-group>
